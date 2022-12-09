@@ -1,0 +1,34 @@
+#include<bits/stdc++.h>
+using namespace std;
+void solve()
+{
+    string s;
+    cin>>s;
+    int mi=INT_MAX;
+    int n=s.size();
+    for(int i=n-1;i>=0;i--)
+    {
+        int x=s[i]-'0';
+        if(x<=mi)
+        {
+            mi=x;
+        }
+        else{
+            int x=s[i]-'0';
+            x=min(x+1,9);
+            s[i]=x+'0';
+        }
+    }
+    sort(s.begin(),s.end());
+    cout<<s<<endl;
+}
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        solve();
+    }
+    return 0;
+}
